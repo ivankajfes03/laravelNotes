@@ -14,10 +14,8 @@
                         <a href="{{ route('note.edit', $note) }}" class="note-edit-button">Edit</a>
                         <button class="note-delete-button">Delete</button>
                     </div>
-                </div>
             </div>
-            @endforeach
-            
+            @endforeach   
         </div>
     </div>
 </x-layout>
