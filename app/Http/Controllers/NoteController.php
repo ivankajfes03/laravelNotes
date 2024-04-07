@@ -60,7 +60,13 @@ class NoteController extends Controller
      */
     public function update(Request $request, Note $note)
     {
-        return 'update';
+        $data = $request->validate([
+            'note' => ['required', 'string']
+        ]);
+        $data['user_id'] = 1;
+        $note->update($data);
+
+        return to_route('note.show', $note)->with('message', 'Note updated successfully');
     }
 
     /**
